@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subscribe Now</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container {
+      background: white;
+      color: #2a5298;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #2a5298;
+      border-radius: 6px;
+      outline: none;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #2a5298;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #1e3c72;
+    }
+
+    .success {
+      display: none;
+      font-size: 1rem;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Subscribe to Newsletter</h2>
+    <p>Get updates on our latest content, offers, and more.</p>
+    <form onsubmit="event.preventDefault(); showSuccess();">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+      <div class="success" id="successMessage">Thank you for subscribing! 🎉</div>
+    </form>
+  </div>
+
+  <script>
+    function showSuccess() {
+      document.getElementById('successMessage').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
